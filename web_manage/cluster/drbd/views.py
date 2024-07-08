@@ -306,8 +306,13 @@ class LvCopyView(APIView):
 
             usedPorts = list(port_set)  # 将集合转换为列表
             usedPorts.sort()  # 按升序排序
+
             newPort = min([port for port in portList if port not in usedPorts])
             return newPort
+            
+
+
+            
         except Exception as e:
             logger.error(''.join(traceback.format_exc()))
 
